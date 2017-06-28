@@ -1,0 +1,6 @@
+framework module Pods_rhians_instagramTests {
+  umbrella header "Pods-rhians-instagramTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
