@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F2073" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -14,7 +14,7 @@
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="rhians_instagram" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="main" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="LoginViewController" customModule="rhians_instagram" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -161,19 +161,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jAP-Ko-Mrw">
-                                <rect key="frame" x="24" y="28" width="327" height="327"/>
+                                <rect key="frame" x="24" y="70" width="327" height="327"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="jAP-Ko-Mrw" secondAttribute="height" multiplier="1:1" id="PTc-hF-OUt"/>
                                 </constraints>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="desciption..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xka-L2-IUJ">
-                                <rect key="frame" x="8" y="371" width="359" height="30"/>
+                                <rect key="frame" x="8" y="422" width="359" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rme-lM-ITg">
-                                <rect key="frame" x="149" y="577" width="77" height="30"/>
+                                <rect key="frame" x="149" y="537" width="77" height="30"/>
                                 <state key="normal" title="Post Image"/>
                                 <connections>
                                     <action selector="postImage:" destination="1Oh-yK-4En" eventType="touchUpInside" id="6Fq-y0-agZ"/>
@@ -184,13 +184,13 @@
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="Xka-L2-IUJ" firstAttribute="leading" secondItem="enh-3S-dXk" secondAttribute="leading" constant="8" id="Iic-IV-CtA"/>
-                            <constraint firstItem="Xka-L2-IUJ" firstAttribute="top" secondItem="jAP-Ko-Mrw" secondAttribute="bottom" constant="16" id="Wy4-oa-Qca"/>
+                            <constraint firstItem="Xka-L2-IUJ" firstAttribute="top" secondItem="jAP-Ko-Mrw" secondAttribute="bottom" constant="25" id="Wy4-oa-Qca"/>
                             <constraint firstAttribute="trailingMargin" secondItem="jAP-Ko-Mrw" secondAttribute="trailing" constant="8" id="arI-9D-Ntb"/>
                             <constraint firstItem="jAP-Ko-Mrw" firstAttribute="leading" secondItem="enh-3S-dXk" secondAttribute="leadingMargin" constant="8" id="gWD-HJ-xHb"/>
-                            <constraint firstItem="jAP-Ko-Mrw" firstAttribute="top" secondItem="tvO-fD-ApY" secondAttribute="bottom" constant="8" id="kWi-Q4-Oaw"/>
+                            <constraint firstItem="jAP-Ko-Mrw" firstAttribute="top" secondItem="tvO-fD-ApY" secondAttribute="bottom" constant="50" id="kWi-Q4-Oaw"/>
                             <constraint firstItem="rme-lM-ITg" firstAttribute="centerX" secondItem="enh-3S-dXk" secondAttribute="centerX" id="sQm-Us-5P4"/>
                             <constraint firstAttribute="trailing" secondItem="Xka-L2-IUJ" secondAttribute="trailing" constant="8" id="vXa-HF-hlU"/>
-                            <constraint firstItem="vKe-wB-92l" firstAttribute="top" secondItem="rme-lM-ITg" secondAttribute="bottom" constant="60" id="wbb-ni-GgB"/>
+                            <constraint firstItem="vKe-wB-92l" firstAttribute="top" secondItem="rme-lM-ITg" secondAttribute="bottom" constant="100" id="wbb-ni-GgB"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="kad-Sx-HKy" appends="YES" id="mIs-Os-R2e"/>
@@ -229,6 +229,48 @@
             </objects>
             <point key="canvasLocation" x="4610.3999999999996" y="142.57871064467767"/>
         </scene>
+        <!--My Profile-->
+        <scene sceneID="gwq-86-Ga3">
+            <objects>
+                <navigationController id="1wO-o4-QnC" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="My Profile" id="DhG-OC-UjR"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="6dF-d2-PFk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="ncR-2E-MKj" kind="relationship" relationship="rootViewController" id="XhR-7t-xLS"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="riW-Mf-ROL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3671" y="921"/>
+        </scene>
+        <!--Me-->
+        <scene sceneID="AnL-gf-3Dr">
+            <objects>
+                <viewController id="ncR-2E-MKj" customClass="MyProvileViewController" customModule="rhians_instagram" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9Fy-gZ-gjp"/>
+                        <viewControllerLayoutGuide type="bottom" id="eBg-0f-taU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="cju-iX-iSb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Me" id="feL-jj-BfQ">
+                        <barButtonItem key="rightBarButtonItem" title="Logout" id="15h-zW-Xpi">
+                            <connections>
+                                <action selector="logout:" destination="ncR-2E-MKj" id="7Gy-kk-X5C"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iMT-yv-WRL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4610" y="921"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="5AB-u8-AV9">
             <objects>
@@ -241,6 +283,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="cP5-ot-OYi" kind="relationship" relationship="viewControllers" id="qVM-qj-hex"/>
+                        <segue destination="1wO-o4-QnC" kind="relationship" relationship="viewControllers" id="oG6-E3-aQI"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3ay-om-MLc" userLabel="First Responder" sceneMemberID="firstResponder"/>
