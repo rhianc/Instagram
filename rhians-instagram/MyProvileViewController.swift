@@ -22,9 +22,9 @@ class MyProvileViewController: UIViewController, UICollectionViewDelegate, UICol
     override func viewWillAppear(_ animated: Bool) {
         collectionView.delegate = self
         collectionView.dataSource = self
-        let profileView = UIImageView(frame: CGRect(x: screenWidth/10, y: screenHeight/7, width: screenWidth/7, height: screenWidth/7))
+        let profileView = UIImageView(frame: CGRect(x: screenWidth/10, y: 100, width: screenWidth/7, height: screenWidth/7))
         profileView.layer.cornerRadius = screenWidth/14
-//        profileView.layer.borderColor = UIColor(white: 1, alpha: 0.8).cgColor
+//      profileView.layer.borderColor = UIColor(white: 1, alpha: 0.8).cgColor
         profileView.layer.borderColor = UIColor.blue.cgColor
         profileView.layer.borderWidth = 3
         view.addSubview(profileView)
@@ -32,14 +32,14 @@ class MyProvileViewController: UIViewController, UICollectionViewDelegate, UICol
         self.automaticallyAdjustsScrollViewInsets = false
         let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
         let cellsPerLine: CGFloat = 3
-        let rowsPerView: CGFloat = 1.5
         layout.minimumLineSpacing = 0
         layout.minimumInteritemSpacing = 0
         layout.sectionInset.top = 0
+        layout.sectionInset.bottom = 0
         let width = collectionView.frame.size.width/cellsPerLine
-        print(width)
-        let height = collectionView.frame.size.height/rowsPerView
-        print(height)
+        //print(width)
+        let height = width
+        //print(height)
         layout.itemSize = CGSize(width: width, height: height)
         fetchData()
     }
@@ -113,14 +113,13 @@ class MyProvileViewController: UIViewController, UICollectionViewDelegate, UICol
         }
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "personalToDetail"{
+            let destination = segue.destination as! DetailViewController
+            let cell = sender as! ProfileCollectionViewCell
+            let index = collectionView.indexPath(for: cell)!
+            destination.data = myPosts[index.row]
+        }
     }
-    */
 
 }

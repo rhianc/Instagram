@@ -19,6 +19,10 @@ class LoggedInViewController: UIViewController, UIImagePickerControllerDelegate,
     var posts: [PFObject] = []
     let screenWidth  = UIScreen.main.fixedCoordinateSpace.bounds.width
     let screenHeight = UIScreen.main.fixedCoordinateSpace.bounds.height
+    
+    override func viewWillAppear(_ animated: Bool) {
+        fetchData()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +33,9 @@ class LoggedInViewController: UIViewController, UIImagePickerControllerDelegate,
         tableView.estimatedRowHeight = 150
         tableView.sectionFooterHeight = 0
         tableView.sectionHeaderHeight = 0
-        
+        tableView.contentInset.left = 0
+        tableView.contentInset.right = 0
+        tableView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0)
         vc.delegate = self
         vc.allowsEditing = true
         pc.delegate = self
@@ -42,8 +48,8 @@ class LoggedInViewController: UIViewController, UIImagePickerControllerDelegate,
             print("Camera 🚫 available so we will use photo library instead")
             vc.sourceType = .photoLibrary
         }
-        fetchData()
-        Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.onTimer), userInfo: nil, repeats: true)
+        //fetchData()
+        Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(self.onTimer), userInfo: nil, repeats: true)
     }
     
     override func didReceiveMemoryWarning() {
@@ -56,6 +62,7 @@ class LoggedInViewController: UIViewController, UIImagePickerControllerDelegate,
         query.order(byDescending: "createdAt")
         query.includeKey("author")
         query.includeKey("caption")
+        query.includeKey("_created_at")
         query.limit = 20
         // fetch data asynchronously
         query.findObjectsInBackground { (posts: [PFObject]?, error: Error?) in
@@ -111,13 +118,21 @@ class LoggedInViewController: UIViewController, UIImagePickerControllerDelegate,
         let headerView = UIView(frame: CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight/10))
         headerView.backgroundColor = UIColor(white: 1, alpha: 1)
         // Add a UILabel for the username here
-        let user = UILabel(frame: CGRect(x: 1, y: 10, width: screenWidth*8/10, height: 30))
+        let user = UILabel(frame: CGRect(x: 10, y: 10, width: screenWidth*8/10, height: 30))
         user.font = UIFont(name:"HelveticaNeue-Bold", size: 18.0)
         let specific = posts[section]
         let author = specific["author"] as? PFUser
         if author != nil{
             user.text = author?.username
             headerView.addSubview(user)
+        }
+        if let date = specific.createdAt {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateStyle = .medium
+            dateFormatter.timeStyle = .short
+            let dateString = dateFormatter.string(from: date)
+            //print(dateString) // Prints: Jun 28, 2017, 2:08 PM
+            user.text = user.text! + "              \(dateString)"
         }
         return headerView
     }
@@ -151,8 +166,16 @@ class LoggedInViewController: UIViewController, UIImagePickerControllerDelegate,
     
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destination = segue.destination as! PostViewController
-        destination.picture = image
+        if segue.identifier == "postedPop"{
+            let destination = segue.destination as! PostViewController
+            destination.picture = image
+        }
+        else if segue.identifier == "feedToDetail"{
+            let destination = segue.destination as! DetailViewController
+            let cell = sender as! UIInstagramTableViewCell
+            let index = tableView.indexPath(for: cell)!
+            destination.data = posts[index.section]
+        }
     }
 
 }

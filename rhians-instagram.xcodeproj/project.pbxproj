@@ -20,6 +20,8 @@
 		09D0DA131F02FFEA00CFDBF9 /* LoggedInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D0DA121F02FFEA00CFDBF9 /* LoggedInViewController.swift */; };
 		09D0DA151F03140B00CFDBF9 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D0DA141F03140B00CFDBF9 /* Post.swift */; };
 		09D0DA171F031FF900CFDBF9 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D0DA161F031FF900CFDBF9 /* PostViewController.swift */; };
+		09DE11A11F059B3000B0C49F /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DE11A01F059B3000B0C49F /* DetailViewController.swift */; };
+		09DE11A31F05B65D00B0C49F /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DE11A21F05B65D00B0C49F /* EditProfileViewController.swift */; };
 		3491A379026C568ED8C516F3 /* Pods_rhians_instagramUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 413018D580B2321473D1ED43 /* Pods_rhians_instagramUITests.framework */; };
 		4929B95398A9EC6E85660C26 /* Pods_rhians_instagram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7268AE7848567BEA37BE59E5 /* Pods_rhians_instagram.framework */; };
 		C40E03DA0ED27BE24726E5B0 /* Pods_rhians_instagramTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F10D9157F3D70DB7BF8AC783 /* Pods_rhians_instagramTests.framework */; };
@@ -62,6 +64,8 @@
 		09D0DA121F02FFEA00CFDBF9 /* LoggedInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggedInViewController.swift; sourceTree = "<group>"; };
 		09D0DA141F03140B00CFDBF9 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		09D0DA161F031FF900CFDBF9 /* PostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
+		09DE11A01F059B3000B0C49F /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		09DE11A21F05B65D00B0C49F /* EditProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		155CBA91F24956150F9E1E28 /* Pods-rhians-instagramTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rhians-instagramTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-rhians-instagramTests/Pods-rhians-instagramTests.debug.xcconfig"; sourceTree = "<group>"; };
 		37171FD783D72BE3AE13B579 /* Pods-rhians-instagram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rhians-instagram.release.xcconfig"; path = "Pods/Target Support Files/Pods-rhians-instagram/Pods-rhians-instagram.release.xcconfig"; sourceTree = "<group>"; };
 		413018D580B2321473D1ED43 /* Pods_rhians_instagramUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_rhians_instagramUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -134,10 +138,12 @@
 				090EE8681F042CDB00D3706B /* UIInstagramTableViewCell.swift */,
 				090EE86A1F046FAF00D3706B /* MyProvileViewController.swift */,
 				090EE86C1F0484BF00D3706B /* ProfileCollectionViewCell.swift */,
+				09DE11A01F059B3000B0C49F /* DetailViewController.swift */,
 				09C9A4541F02F5A800A08CE7 /* Main.storyboard */,
 				09C9A4571F02F5A800A08CE7 /* Assets.xcassets */,
 				09C9A4591F02F5A800A08CE7 /* LaunchScreen.storyboard */,
 				09C9A45C1F02F5A800A08CE7 /* Info.plist */,
+				09DE11A21F05B65D00B0C49F /* EditProfileViewController.swift */,
 			);
 			path = "rhians-instagram";
 			sourceTree = "<group>";
@@ -467,6 +473,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09DE11A11F059B3000B0C49F /* DetailViewController.swift in Sources */,
 				090EE86B1F046FAF00D3706B /* MyProvileViewController.swift in Sources */,
 				09D0DA131F02FFEA00CFDBF9 /* LoggedInViewController.swift in Sources */,
 				090EE86D1F0484BF00D3706B /* ProfileCollectionViewCell.swift in Sources */,
@@ -474,6 +481,7 @@
 				090EE8691F042CDB00D3706B /* UIInstagramTableViewCell.swift in Sources */,
 				09C9A4511F02F5A800A08CE7 /* AppDelegate.swift in Sources */,
 				09D0DA151F03140B00CFDBF9 /* Post.swift in Sources */,
+				09DE11A31F05B65D00B0C49F /* EditProfileViewController.swift in Sources */,
 				09D0DA171F031FF900CFDBF9 /* PostViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
