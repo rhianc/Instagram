@@ -214,7 +214,7 @@
         <scene sceneID="Ubz-BH-M8o">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cP5-ot-OYi" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Photo Feed" id="7Mk-sg-o5C"/>
+                    <tabBarItem key="tabBarItem" title="Photo Feed" image="feed_tab" id="7Mk-sg-o5C"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="zyo-Ia-3Pj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -233,7 +233,7 @@
         <scene sceneID="gwq-86-Ga3">
             <objects>
                 <navigationController id="1wO-o4-QnC" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="My Profile" id="DhG-OC-UjR"/>
+                    <tabBarItem key="tabBarItem" title="My Profile" image="profile_tab" id="DhG-OC-UjR"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="6dF-d2-PFk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -291,4 +291,8 @@
             <point key="canvasLocation" x="3671.1999999999998" y="142.57871064467767"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="feed_tab" width="25" height="25"/>
+        <image name="profile_tab" width="25" height="25"/>
+    </resources>
 </document>
