@@ -15,6 +15,9 @@ class PostViewController: UIViewController {
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var descriptionField: UITextField!
     var picture: UIImage?
+    var loadingMoreView: InfiniteScrollActivityView?
+    let screenHeight = UIScreen.main.fixedCoordinateSpace.bounds.height
+    let screenWidth  = UIScreen.main.fixedCoordinateSpace.bounds.width
     
     override func viewWillAppear(_ animated: Bool) {
         image.image = picture
@@ -22,6 +25,11 @@ class PostViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight)
+        loadingMoreView = InfiniteScrollActivityView(frame: frame)
+        loadingMoreView!.isHidden = true
+        view.addSubview(loadingMoreView!)
 
         // Do any additional setup after loading the view.
     }
@@ -33,9 +41,11 @@ class PostViewController: UIViewController {
     
     
     @IBAction func postImage(_ sender: UIButton) {
+        loadingMoreView!.startAnimating()
         Post.postUserImage(image: picture, withCaption: descriptionField.text) { (bool: Bool, error: Error?) in
             if bool{
                 print("AAAAA")
+                self.loadingMoreView!.stopAnimating()
                 self.dismiss(animated: true, completion: nil)
             }
             else{
