@@ -20,6 +20,8 @@ class MyProvileViewController: UIViewController, UICollectionViewDelegate, UICol
     let screenHeight = UIScreen.main.fixedCoordinateSpace.bounds.height
 
     override func viewWillAppear(_ animated: Bool) {
+        collectionView.delegate = self
+        collectionView.dataSource = self
         let profileView = UIImageView(frame: CGRect(x: screenWidth/10, y: screenHeight/7, width: screenWidth/7, height: screenWidth/7))
         profileView.layer.cornerRadius = screenWidth/14
 //        profileView.layer.borderColor = UIColor(white: 1, alpha: 0.8).cgColor
@@ -27,6 +29,19 @@ class MyProvileViewController: UIViewController, UICollectionViewDelegate, UICol
         profileView.layer.borderWidth = 3
         view.addSubview(profileView)
         name.text = PFUser.current()?.username
+        self.automaticallyAdjustsScrollViewInsets = false
+        let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
+        let cellsPerLine: CGFloat = 3
+        let rowsPerView: CGFloat = 1.5
+        layout.minimumLineSpacing = 0
+        layout.minimumInteritemSpacing = 0
+        layout.sectionInset.top = 0
+        let width = collectionView.frame.size.width/cellsPerLine
+        print(width)
+        let height = collectionView.frame.size.height/rowsPerView
+        print(height)
+        layout.itemSize = CGSize(width: width, height: height)
+        fetchData()
     }
     
     func fetchData(){
@@ -43,13 +58,19 @@ class MyProvileViewController: UIViewController, UICollectionViewDelegate, UICol
             }
             else{
                 let allPosts = posts!
+                //print(allPosts)
                 // reload tableViewData
                 var mine: [PFObject] = []
+                let currentUsername = PFUser.current()?.username as String!
+                
                 for post in allPosts{
-                    if post["author"] as! PFUser == PFUser.current(){
+                    let Author = post["author"] as! PFUser
+                    let Username = Author.username as! String
+                    if Username == currentUsername{
                         mine.append(post)
                     }
                 }
+                //print(mine)
                 self.myPosts = mine
                 self.collectionView.reloadData()
             }
@@ -58,7 +79,7 @@ class MyProvileViewController: UIViewController, UICollectionViewDelegate, UICol
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        collectionView.reloadData()
         // Do any additional setup after loading the view.
     }
 
@@ -73,7 +94,7 @@ class MyProvileViewController: UIViewController, UICollectionViewDelegate, UICol
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionCell", for: indexPath) as! ProfileCollectionViewCell
-        let post = myPosts[indexPath.section]
+        let post = myPosts[indexPath.row]
         cell.collectionImage.file = (post["media"] as! PFFile)
         cell.collectionImage.loadInBackground()
         return cell
