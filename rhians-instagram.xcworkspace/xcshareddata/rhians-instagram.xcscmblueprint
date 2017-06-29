@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "7EB8720BA18CF50FEE76B299EAD2B447854CC8F0",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "7EB8720BA18CF50FEE76B299EAD2B447854CC8F0" : 9223372036854775807,
+    "2F28753C4AB221F0DD0152256DAD319A6894B71C" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "1673BEA2-F9FD-413C-AFA6-7111605BEA35",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "7EB8720BA18CF50FEE76B299EAD2B447854CC8F0" : "Instagram\/",
+    "2F28753C4AB221F0DD0152256DAD319A6894B71C" : "Day2Lab\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "rhians-instagram",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "rhians-instagram.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/rhianc\/TumblrLab.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "2F28753C4AB221F0DD0152256DAD319A6894B71C"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/rhianc\/Instagram.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "7EB8720BA18CF50FEE76B299EAD2B447854CC8F0"
+    }
+  ]
+}

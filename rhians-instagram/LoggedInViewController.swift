@@ -10,7 +10,7 @@ import UIKit
 import ParseUI
 import Parse
 
-class LoggedInViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate,UITableViewDataSource, UITableViewDelegate {
+class LoggedInViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate,UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     let vc = UIImagePickerController()
@@ -19,6 +19,10 @@ class LoggedInViewController: UIViewController, UIImagePickerControllerDelegate,
     var posts: [PFObject] = []
     let screenWidth  = UIScreen.main.fixedCoordinateSpace.bounds.width
     let screenHeight = UIScreen.main.fixedCoordinateSpace.bounds.height
+    let refresh = UIRefreshControl()
+    var loadingMoreView: InfiniteScrollActivityView?
+    var isMoreDataLoading: Bool = false
+
     
     override func viewWillAppear(_ animated: Bool) {
         fetchData()
@@ -27,6 +31,12 @@ class LoggedInViewController: UIViewController, UIImagePickerControllerDelegate,
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        let frame = CGRect(x: 0, y: tableView.contentSize.height, width: tableView.bounds.size.width, height: InfiniteScrollActivityView.defaultHeight)
+        loadingMoreView = InfiniteScrollActivityView(frame: frame)
+        loadingMoreView!.isHidden = true
+        tableView.addSubview(loadingMoreView!)
+        
         tableView.delegate = self
         tableView.dataSource = self
         tableView.rowHeight = UITableViewAutomaticDimension
@@ -36,6 +46,10 @@ class LoggedInViewController: UIViewController, UIImagePickerControllerDelegate,
         tableView.contentInset.left = 0
         tableView.contentInset.right = 0
         tableView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0)
+        var insets = tableView.contentInset
+        insets.bottom += InfiniteScrollActivityView.defaultHeight
+        tableView.contentInset = insets
+        tableView.insertSubview(refresh, at: 0)
         vc.delegate = self
         vc.allowsEditing = true
         pc.delegate = self
@@ -48,8 +62,7 @@ class LoggedInViewController: UIViewController, UIImagePickerControllerDelegate,
             print("Camera 🚫 available so we will use photo library instead")
             vc.sourceType = .photoLibrary
         }
-        //fetchData()
-        Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(self.onTimer), userInfo: nil, repeats: true)
+        refresh.addTarget(self, action: #selector(LoggedInViewController.refreshAction(_:)), for: .valueChanged)
     }
     
     override func didReceiveMemoryWarning() {
@@ -74,6 +87,7 @@ class LoggedInViewController: UIViewController, UIImagePickerControllerDelegate,
                 self.posts = posts!
                 // reload tableViewData
                 self.tableView.reloadData()
+                self.refresh.endRefreshing()
             }
         }
     }
@@ -159,11 +173,25 @@ class LoggedInViewController: UIViewController, UIImagePickerControllerDelegate,
         self.present(pc, animated: true, completion: nil)
     }
     
-    func onTimer() {
-        // Add code to be run periodically
+    func refreshAction(_ refreshControl: UIRefreshControl){
         fetchData()
     }
     
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if (!isMoreDataLoading){
+            let scrollViewContentHeight = tableView.contentSize.height
+            let scrollOffsetThreshold = scrollViewContentHeight - tableView.bounds.size.height
+            if(scrollView.contentOffset.y > scrollOffsetThreshold && tableView.isDragging) {
+                isMoreDataLoading = true
+                let frame = CGRect(x: 0, y: tableView.contentSize.height, width: tableView.bounds.size.width, height: InfiniteScrollActivityView.defaultHeight)
+                loadingMoreView?.frame = frame
+                loadingMoreView!.startAnimating()
+                fetchData()
+                
+                
+            }
+        }
+    }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "postedPop"{
