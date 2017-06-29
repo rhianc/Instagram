@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		090EE8691F042CDB00D3706B /* UIInstagramTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090EE8681F042CDB00D3706B /* UIInstagramTableViewCell.swift */; };
 		090EE86B1F046FAF00D3706B /* MyProvileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090EE86A1F046FAF00D3706B /* MyProvileViewController.swift */; };
+		090EE86D1F0484BF00D3706B /* ProfileCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090EE86C1F0484BF00D3706B /* ProfileCollectionViewCell.swift */; };
 		09C9A4511F02F5A800A08CE7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C9A4501F02F5A800A08CE7 /* AppDelegate.swift */; };
 		09C9A4561F02F5A800A08CE7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09C9A4541F02F5A800A08CE7 /* Main.storyboard */; };
 		09C9A4581F02F5A800A08CE7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09C9A4571F02F5A800A08CE7 /* Assets.xcassets */; };
@@ -44,6 +45,7 @@
 /* Begin PBXFileReference section */
 		090EE8681F042CDB00D3706B /* UIInstagramTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIInstagramTableViewCell.swift; sourceTree = "<group>"; };
 		090EE86A1F046FAF00D3706B /* MyProvileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyProvileViewController.swift; sourceTree = "<group>"; };
+		090EE86C1F0484BF00D3706B /* ProfileCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileCollectionViewCell.swift; sourceTree = "<group>"; };
 		09C9A44D1F02F5A800A08CE7 /* rhians-instagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "rhians-instagram.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		09C9A4501F02F5A800A08CE7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		09C9A4551F02F5A800A08CE7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 				09D0DA141F03140B00CFDBF9 /* Post.swift */,
 				090EE8681F042CDB00D3706B /* UIInstagramTableViewCell.swift */,
 				090EE86A1F046FAF00D3706B /* MyProvileViewController.swift */,
+				090EE86C1F0484BF00D3706B /* ProfileCollectionViewCell.swift */,
 				09C9A4541F02F5A800A08CE7 /* Main.storyboard */,
 				09C9A4571F02F5A800A08CE7 /* Assets.xcassets */,
 				09C9A4591F02F5A800A08CE7 /* LaunchScreen.storyboard */,
@@ -466,6 +469,7 @@
 			files = (
 				090EE86B1F046FAF00D3706B /* MyProvileViewController.swift in Sources */,
 				09D0DA131F02FFEA00CFDBF9 /* LoggedInViewController.swift in Sources */,
+				090EE86D1F0484BF00D3706B /* ProfileCollectionViewCell.swift in Sources */,
 				09D0DA111F02FB2E00CFDBF9 /* LoginViewController.swift in Sources */,
 				090EE8691F042CDB00D3706B /* UIInstagramTableViewCell.swift in Sources */,
 				09C9A4511F02F5A800A08CE7 /* AppDelegate.swift in Sources */,

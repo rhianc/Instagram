@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -257,7 +258,53 @@
                     <view key="view" contentMode="scaleToFill" id="cju-iX-iSb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Xc-Dv-OZ5">
+                                <rect key="frame" x="187.5" y="114" width="163.5" height="26.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="PZP-6n-BOo">
+                                <rect key="frame" x="0.0" y="233.5" width="375" height="433.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="fgV-Hm-ufI">
+                                    <size key="itemSize" width="129" height="117"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="collectionCell" id="XNb-DV-5JV" customClass="ProfileCollectionViewCell" customModule="rhians_instagram" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="129" height="117"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="129" height="117"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="O5O-UY-8CS" customClass="PFImageView">
+                                                    <rect key="frame" x="11" y="0.0" width="109" height="117"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <connections>
+                                            <outlet property="collectionImage" destination="O5O-UY-8CS" id="7ae-xt-gBY"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="PZP-6n-BOo" secondAttribute="trailing" id="Gys-Xt-lOk"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="2Xc-Dv-OZ5" secondAttribute="trailing" constant="8" id="g7R-Mg-wwq"/>
+                            <constraint firstAttribute="bottom" secondItem="PZP-6n-BOo" secondAttribute="bottom" id="gJL-0N-Rkw"/>
+                            <constraint firstItem="PZP-6n-BOo" firstAttribute="leading" secondItem="cju-iX-iSb" secondAttribute="leading" id="h5c-Qb-tUo"/>
+                            <constraint firstItem="PZP-6n-BOo" firstAttribute="top" secondItem="cju-iX-iSb" secondAttribute="centerY" constant="-100" id="hWW-1E-MNd"/>
+                            <constraint firstItem="2Xc-Dv-OZ5" firstAttribute="top" secondItem="9Fy-gZ-gjp" secondAttribute="bottom" constant="50" id="ijE-FB-s08"/>
+                            <constraint firstItem="2Xc-Dv-OZ5" firstAttribute="leading" secondItem="cju-iX-iSb" secondAttribute="centerX" id="l2G-nW-Cy6"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Me" id="feL-jj-BfQ">
                         <barButtonItem key="rightBarButtonItem" title="Logout" id="15h-zW-Xpi">
@@ -266,10 +313,14 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="collectionView" destination="PZP-6n-BOo" id="f6j-LU-RcD"/>
+                        <outlet property="name" destination="2Xc-Dv-OZ5" id="2P4-7b-T0a"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iMT-yv-WRL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4610" y="921"/>
+            <point key="canvasLocation" x="4608.8000000000002" y="920.68965517241384"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="5AB-u8-AV9">
