@@ -129,15 +129,25 @@ class LoggedInViewController: UIViewController, UIImagePickerControllerDelegate,
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         // create the view
+        let specific = posts[section]
         let headerView = UIView(frame: CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight/10))
         headerView.backgroundColor = UIColor(white: 1, alpha: 1)
+        // Add a profile pic here
+        let frame = CGRect(x: 7, y:7, width: 30, height: 30)
+        let profileView = PFImageView(frame: frame)
+        profileView.layer.cornerRadius = 0.5*profileView.frame.width
+        profileView.layer.masksToBounds = true
+        let author = specific["author"] as! PFUser
+        if let pic = author.object(forKey: "profilePic"){
+            profileView.file = pic as! PFFile
+            profileView.loadInBackground()
+        }
+        headerView.addSubview(profileView)
         // Add a UILabel for the username here
-        let user = UILabel(frame: CGRect(x: 10, y: 10, width: screenWidth*8/10, height: 30))
+        let user = UILabel(frame: CGRect(x: 45, y: 10, width: screenWidth*8/10, height: 30))
         user.font = UIFont(name:"HelveticaNeue-Bold", size: 18.0)
-        let specific = posts[section]
-        let author = specific["author"] as? PFUser
         if author != nil{
-            user.text = author?.username
+            user.text = author.username
             headerView.addSubview(user)
         }
         if let date = specific.createdAt {
@@ -146,7 +156,7 @@ class LoggedInViewController: UIViewController, UIImagePickerControllerDelegate,
             dateFormatter.timeStyle = .short
             let dateString = dateFormatter.string(from: date)
             //print(dateString) // Prints: Jun 28, 2017, 2:08 PM
-            user.text = user.text! + "              \(dateString)"
+            
         }
         return headerView
     }

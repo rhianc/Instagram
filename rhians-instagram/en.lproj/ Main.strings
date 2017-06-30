@@ -1,0 +1,63 @@
+
+/* Class = "UIBarButtonItem"; title = "Logout"; ObjectID = "15h-zW-Xpi"; */
+"15h-zW-Xpi.title" = "Logout";
+
+/* Class = "UIButton"; normalTitle = "Done"; ObjectID = "1Gg-FW-SRh"; */
+"1Gg-FW-SRh.normalTitle" = "Done";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "2Xc-Dv-OZ5"; */
+"2Xc-Dv-OZ5.text" = "Label";
+
+/* Class = "UITabBarItem"; title = "Photo Feed"; ObjectID = "7Mk-sg-o5C"; */
+"7Mk-sg-o5C.title" = "Photo Feed";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "8tJ-Dz-XVC"; */
+"8tJ-Dz-XVC.text" = "Label";
+
+/* Class = "UITabBarItem"; title = "My Profile"; ObjectID = "DhG-OC-UjR"; */
+"DhG-OC-UjR.title" = "My Profile";
+
+/* Class = "UIButton"; normalTitle = "Sign Up"; ObjectID = "IgW-ll-Gwm"; */
+"IgW-ll-Gwm.normalTitle" = "Sign Up";
+
+/* Class = "UINavigationItem"; title = "Instagram"; ObjectID = "LsU-NR-a2M"; */
+"LsU-NR-a2M.title" = "Instagram";
+
+/* Class = "UIBarButtonItem"; title = "Upload"; ObjectID = "MLT-y9-Akf"; */
+"MLT-y9-Akf.title" = "Upload";
+
+/* Class = "UILabel"; text = "Tap Items to Edit"; ObjectID = "SmM-bo-rS1"; */
+"SmM-bo-rS1.text" = "Tap Items to Edit";
+
+/* Class = "UIBarButtonItem"; title = "Edit"; ObjectID = "Vb6-fK-AH0"; */
+"Vb6-fK-AH0.title" = "Edit";
+
+/* Class = "UIButton"; normalTitle = "Login"; ObjectID = "Wbt-bm-aSJ"; */
+"Wbt-bm-aSJ.normalTitle" = "Login";
+
+/* Class = "UITextField"; placeholder = "desciption..."; ObjectID = "Xka-L2-IUJ"; */
+"Xka-L2-IUJ.placeholder" = "desciption...";
+
+/* Class = "UINavigationItem"; title = "Me"; ObjectID = "feL-jj-BfQ"; */
+"feL-jj-BfQ.title" = "Me";
+
+/* Class = "UIBarButtonItem"; title = "Camera"; ObjectID = "gpi-hQ-3TJ"; */
+"gpi-hQ-3TJ.title" = "Camera";
+
+/* Class = "UILabel"; text = "Caption"; ObjectID = "h3Q-wd-yQ4"; */
+"h3Q-wd-yQ4.text" = "Caption";
+
+/* Class = "UITextField"; placeholder = "password"; ObjectID = "kUX-Xc-ob1"; */
+"kUX-Xc-ob1.placeholder" = "password";
+
+/* Class = "UIButton"; normalTitle = "Post Image"; ObjectID = "rme-lM-ITg"; */
+"rme-lM-ITg.normalTitle" = "Post Image";
+
+/* Class = "UITextField"; placeholder = "username"; ObjectID = "u66-bI-Qd8"; */
+"u66-bI-Qd8.placeholder" = "username";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "yl7-SG-dQe"; */
+"yl7-SG-dQe.text" = "Label";
+
+/* Class = "UILabel"; text = "Bio"; ObjectID = "zUd-Rp-lvj"; */
+"zUd-Rp-lvj.text" = "Bio";

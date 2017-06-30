@@ -11,7 +11,6 @@
 		090EE86B1F046FAF00D3706B /* MyProvileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090EE86A1F046FAF00D3706B /* MyProvileViewController.swift */; };
 		090EE86D1F0484BF00D3706B /* ProfileCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090EE86C1F0484BF00D3706B /* ProfileCollectionViewCell.swift */; };
 		09C9A4511F02F5A800A08CE7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C9A4501F02F5A800A08CE7 /* AppDelegate.swift */; };
-		09C9A4561F02F5A800A08CE7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09C9A4541F02F5A800A08CE7 /* Main.storyboard */; };
 		09C9A4581F02F5A800A08CE7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09C9A4571F02F5A800A08CE7 /* Assets.xcassets */; };
 		09C9A45B1F02F5A800A08CE7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09C9A4591F02F5A800A08CE7 /* LaunchScreen.storyboard */; };
 		09C9A4661F02F5A800A08CE7 /* rhians_instagramTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C9A4651F02F5A800A08CE7 /* rhians_instagramTests.swift */; };
@@ -23,6 +22,7 @@
 		09DE11A11F059B3000B0C49F /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DE11A01F059B3000B0C49F /* DetailViewController.swift */; };
 		09DE11A31F05B65D00B0C49F /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DE11A21F05B65D00B0C49F /* EditProfileViewController.swift */; };
 		09DE11A51F05BDF300B0C49F /* InfiniteScrollActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DE11A41F05BDF300B0C49F /* InfiniteScrollActivityView.swift */; };
+		09DE11AC1F05D8E400B0C49F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09DE11AA1F05D8E400B0C49F /* Main.storyboard */; };
 		3491A379026C568ED8C516F3 /* Pods_rhians_instagramUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 413018D580B2321473D1ED43 /* Pods_rhians_instagramUITests.framework */; };
 		4929B95398A9EC6E85660C26 /* Pods_rhians_instagram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7268AE7848567BEA37BE59E5 /* Pods_rhians_instagram.framework */; };
 		C40E03DA0ED27BE24726E5B0 /* Pods_rhians_instagramTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F10D9157F3D70DB7BF8AC783 /* Pods_rhians_instagramTests.framework */; };
@@ -51,7 +51,6 @@
 		090EE86C1F0484BF00D3706B /* ProfileCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileCollectionViewCell.swift; sourceTree = "<group>"; };
 		09C9A44D1F02F5A800A08CE7 /* rhians-instagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "rhians-instagram.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		09C9A4501F02F5A800A08CE7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		09C9A4551F02F5A800A08CE7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		09C9A4571F02F5A800A08CE7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		09C9A45A1F02F5A800A08CE7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		09C9A45C1F02F5A800A08CE7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -68,6 +67,7 @@
 		09DE11A01F059B3000B0C49F /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		09DE11A21F05B65D00B0C49F /* EditProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		09DE11A41F05BDF300B0C49F /* InfiniteScrollActivityView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InfiniteScrollActivityView.swift; path = ../../Day2Lab/Day2Lab/InfiniteScrollActivityView.swift; sourceTree = "<group>"; };
+		09DE11AB1F05D8E400B0C49F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		155CBA91F24956150F9E1E28 /* Pods-rhians-instagramTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rhians-instagramTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-rhians-instagramTests/Pods-rhians-instagramTests.debug.xcconfig"; sourceTree = "<group>"; };
 		37171FD783D72BE3AE13B579 /* Pods-rhians-instagram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rhians-instagram.release.xcconfig"; path = "Pods/Target Support Files/Pods-rhians-instagram/Pods-rhians-instagram.release.xcconfig"; sourceTree = "<group>"; };
 		413018D580B2321473D1ED43 /* Pods_rhians_instagramUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_rhians_instagramUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -142,11 +142,11 @@
 				090EE86C1F0484BF00D3706B /* ProfileCollectionViewCell.swift */,
 				09DE11A01F059B3000B0C49F /* DetailViewController.swift */,
 				09DE11A41F05BDF300B0C49F /* InfiniteScrollActivityView.swift */,
-				09C9A4541F02F5A800A08CE7 /* Main.storyboard */,
+				09DE11A21F05B65D00B0C49F /* EditProfileViewController.swift */,
+				09DE11AA1F05D8E400B0C49F /* Main.storyboard */,
 				09C9A4571F02F5A800A08CE7 /* Assets.xcassets */,
 				09C9A4591F02F5A800A08CE7 /* LaunchScreen.storyboard */,
 				09C9A45C1F02F5A800A08CE7 /* Info.plist */,
-				09DE11A21F05B65D00B0C49F /* EditProfileViewController.swift */,
 			);
 			path = "rhians-instagram";
 			sourceTree = "<group>";
@@ -311,9 +311,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09DE11AC1F05D8E400B0C49F /* Main.storyboard in Resources */,
 				09C9A45B1F02F5A800A08CE7 /* LaunchScreen.storyboard in Resources */,
 				09C9A4581F02F5A800A08CE7 /* Assets.xcassets in Resources */,
-				09C9A4561F02F5A800A08CE7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -522,20 +522,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		09C9A4541F02F5A800A08CE7 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				09C9A4551F02F5A800A08CE7 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		09C9A4591F02F5A800A08CE7 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				09C9A45A1F02F5A800A08CE7 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		09DE11AA1F05D8E400B0C49F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				09DE11AB1F05D8E400B0C49F /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

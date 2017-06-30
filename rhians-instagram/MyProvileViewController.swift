@@ -12,6 +12,9 @@ import ParseUI
 
 class MyProvileViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
+    
+    @IBOutlet weak var profileView: PFImageView!
+    @IBOutlet weak var bio: UILabel!
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
     var myPosts: [PFObject] = []
@@ -20,14 +23,20 @@ class MyProvileViewController: UIViewController, UICollectionViewDelegate, UICol
     let screenHeight = UIScreen.main.fixedCoordinateSpace.bounds.height
 
     override func viewWillAppear(_ animated: Bool) {
+        
+        if let serverBio = PFUser.current()!.object(forKey: "bio"){
+            print(serverBio)
+            bio.text = serverBio as! String
+        }
         collectionView.delegate = self
         collectionView.dataSource = self
-        let profileView = UIImageView(frame: CGRect(x: screenWidth/10, y: 100, width: screenWidth/7, height: screenWidth/7))
-        profileView.layer.cornerRadius = screenWidth/14
-//      profileView.layer.borderColor = UIColor(white: 1, alpha: 0.8).cgColor
-        profileView.layer.borderColor = UIColor.blue.cgColor
-        profileView.layer.borderWidth = 3
-        view.addSubview(profileView)
+        profileView.layer.cornerRadius = 0.5*profileView.frame.width
+        profileView.layer.masksToBounds = true
+        if let pic = PFUser.current()!.object(forKey: "profilePic"){
+            profileView.file = pic as! PFFile
+            profileView.loadInBackground()
+        }
+        
         name.text = PFUser.current()?.username
         self.automaticallyAdjustsScrollViewInsets = false
         let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
