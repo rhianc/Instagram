@@ -17,6 +17,8 @@ class EditProfileViewController: UIViewController, UINavigationControllerDelegat
     let pc = UIImagePickerController()
     
     override func viewWillAppear(_ animated: Bool) {
+        profilePicView.layer.cornerRadius = 0.5*profilePicView.frame.width
+        profilePicView.layer.masksToBounds = true
         if let pic = PFUser.current()!.object(forKey: "profilePic"){
             profilePicView.file = pic as! PFFile
             profilePicView.loadInBackground()
@@ -66,6 +68,10 @@ class EditProfileViewController: UIViewController, UINavigationControllerDelegat
         PFUser.current()!.setObject(pic, forKey: "profilePic")
         //print("got here")
         PFUser.current()!.saveInBackground()
+        if let pic = PFUser.current()!.object(forKey: "profilePic"){
+            self.profilePicView.file = pic as! PFFile
+            self.profilePicView.loadInBackground()
+        }
         self.pc.dismiss(animated: true, completion: nil)
 //        let storyboard = UIStoryboard(name: "Main", bundle: nil)
 //        let viewController = storyboard.instantiateViewController(withIdentifier: "edit") as! EditProfileViewController

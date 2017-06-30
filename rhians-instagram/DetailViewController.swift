@@ -16,6 +16,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var nameAndTimeLabel: UILabel!
     @IBOutlet weak var mainPicView: PFImageView!
     @IBOutlet weak var captionLabel: UILabel!
+    @IBOutlet weak var Date: UILabel!
     var data: PFObject!
 
     override func viewWillAppear(_ animated: Bool) {
@@ -26,13 +27,19 @@ class DetailViewController: UIViewController {
         if author != nil{
             nameAndTimeLabel.text = author?.username
         }
+        profileView.layer.cornerRadius = 0.5*profileView.frame.width
+        profileView.layer.masksToBounds = true
+        if let pic = author?.object(forKey: "profilePic"){
+            profileView.file = pic as! PFFile
+            profileView.loadInBackground()
+        }
         if let date = data.createdAt {
             let dateFormatter = DateFormatter()
             dateFormatter.dateStyle = .medium
             dateFormatter.timeStyle = .short
             let dateString = dateFormatter.string(from: date)
             //print(dateString) // Prints: Jun 28, 2017, 2:08 PM
-            nameAndTimeLabel.text = nameAndTimeLabel.text! + "      \(dateString)"
+            Date.text = dateString
         }
     }
     
